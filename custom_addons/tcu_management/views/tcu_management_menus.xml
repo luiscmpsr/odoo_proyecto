@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<!-- Main menu -->
+	<menuitem id="menu_tcu_management_root"       name="TCU Management" sequence="1"/>
+
+	<!-- Sub menu con acción -->
+	<menuitem id="menu_tcu_management_periodo"    name="Periodo"    parent="menu_tcu_management_root" 
+		action="action_tcu_periodo"    sequence="2"/>
+	<menuitem id="menu_tcu_management_estudiante" name="Estudiante" parent="menu_tcu_management_root" 
+		action="action_tcu_estudiante" sequence="3"/>
+	<menuitem id="menu_tcu_management_solicitud"  name="Solicitud"  parent="menu_tcu_management_root" 
+		action="action_tcu_solicitud"  sequence="4"/>
+</odoo>

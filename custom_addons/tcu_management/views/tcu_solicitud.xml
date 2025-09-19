@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<record id="action_tcu_solicitud" model="ir.actions.act_window">
+		<field name="name">Solicitudes</field>
+		<field name="res_model">tcu.solicitud</field>
+		<field name="view_mode">list,form,kanban</field>
+		<field name="help" type="html">
+			<p class="o_view_nocontent_similing_face">Crea a tu primer solicitud</p>
+		</field>
+	</record>
+	
+	<!-- Vista LIST -->
+    <record id="view_tcu_solicitud_list" model="ir.ui.view">
+        <field name="name">tcu.solicitud.list</field>
+        <field name="model">tcu.solicitud</field>
+        <field name="arch" type="xml">
+            <list string="Solicitudes">
+				<field name="id"      		  	string="ID"/>
+                <field name="sol_estudiante"    string="Nombre del Estudiante"/>
+				<field name="sol_periodo"       string="Periodo del TCU"/>
+                <field name="sol_lugar"         string="Lugar del TCU"/>
+                <field name="sol_encargado"     string="Encargado del Estudiante"/>
+                <field name="sol_fecha"         string="Fecha de Solicitud"/>
+				<field name="sol_estado"        string="Estado" widget="statusbar" statusbar_visible="pendiente,revision,aprobado,rechazado"/>                
+				<field name="sol_observaciones" string="Observaciones"/>
+				<field name="sol_documentos"    string="Documentos"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Vista FORM -->
+    <record id="view_tcu_solicitud_form" model="ir.ui.view">
+        <field name="name">tcu.solicitud.form</field>
+        <field name="model">tcu.solicitud</field>
+        <field name="arch" type="xml">
+            <form string="Solicitudes">
+                <sheet>
+                    <group>
+						<field name="id"      		  	string="ID"/>
+						<field name="sol_estudiante"    string="Nombre del Estudiante"/>
+						<field name="sol_periodo"       string="Periodo del TCU"/>
+						<field name="sol_lugar"         string="Lugar del TCU"/>
+						<field name="sol_encargado"     string="Encargado del Estudiante"/>
+						<field name="sol_fecha"         string="Fecha de Solicitud"/>
+						<field name="sol_estado"        string="Estado"/>
+						<field name="sol_observaciones" string="Observaciones"/>
+						<field name="sol_documentos"    string="Documentos"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
