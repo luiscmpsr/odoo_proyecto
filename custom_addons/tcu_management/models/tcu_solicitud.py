@@ -1,6 +1,8 @@
 from odoo import fields,models,api
 from datetime import datetime
 from odoo.exceptions import ValidationError
+from odoo.tools.misc import default_parser
+
 
 class TCUSolicitud(models.Model):
     _name = "tcu.solicitud"
@@ -17,7 +19,7 @@ class TCUSolicitud(models.Model):
                                             ('aprobado',  'Aprobado'),
                                             ('rechazado', 'Rechazado'),
                                         ], string="Estado",            required=True)
-    sol_observaciones = fields.Text(string="Observaciones",            required=True)
+    sol_observaciones = fields.Text(string="Observaciones",            required=True, default='Recibido')
     sol_documentos    = fields.Many2many(
                                             'ir.attachment',
                                             'tcu_documento_rel',
