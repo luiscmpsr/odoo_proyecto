@@ -24,7 +24,7 @@ class TCUSolicitud(models.Model):
                                             'ir.attachment',
                                             'tcu_documento_rel',
                                             'doc_id', 'attach_id', 
-                                            string="Documentos",       required=True)
+                                            string="Documentos",       required=False)
     
     # Valido que el nombre del estudiante exista
     @api.constrains('sol_estudiante')
@@ -51,11 +51,11 @@ class TCUSolicitud(models.Model):
                     )
     
     # Valido que se haya subido al menos 1 documento
-    @api.constrains('sol_documentos')
-    def _check_al_menos_un_archivo(self):
-        for record in self:
-            if not record.sol_documentos:
-                raise ValidationError("Se debe subir al menos un archivo para la solicitud.")
+    #@api.constrains('sol_documentos')
+    #def _check_al_menos_un_archivo(self):
+    #    for record in self:
+    #        if not record.sol_documentos:
+    #            raise ValidationError("Se debe subir al menos un archivo para la solicitud.")
     
     # Se sobreescribe el write
     def write(self, vals):
